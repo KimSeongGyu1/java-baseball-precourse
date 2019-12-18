@@ -8,6 +8,7 @@ public class InputView {
 	
 	public static List<Integer> enterUserNumbers() {
 		try {
+			System.out.print("숫자를 입력해주세요: ");
 			return InputParser.parseStringToIntList(SCANNER.nextLine());
 		} catch (IllegalArgumentException e) {
 			System.out.println(e.getMessage());

@@ -9,6 +9,7 @@ public class Judge {
 	private static final int NUM_OF_NUMBERS = 3;
 	private static final int NUM_RANGE = 9;
 	private static final int MIN_NUM = 1;
+	private static final int FINISHING_COUNTS = 3;
 	
 	private static Random RANDOM = new Random();
 	private GameNumbers judgeNumbers;
@@ -36,6 +37,13 @@ public class Judge {
 	public void checkResult(GameNumbers userNumbers) {
 		this.strikeCounts = this.judgeNumbers.getExactMatchingCounts(userNumbers);
 		this.ballCounts = this.judgeNumbers.getOverlappingCounts(userNumbers) - this.strikeCounts;
+	}
+	
+	public boolean isGameFinished() {
+		if (this.strikeCounts == FINISHING_COUNTS) {
+			return true;
+		}
+		return false;
 	}
 	
 	public void showNumbers() {
