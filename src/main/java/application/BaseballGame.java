@@ -7,12 +7,13 @@ import domain.Judge;
 public class BaseballGame {	
 	public void play() {
 		User user = new User();
-		YesNoFromInt isStartingGame = new YesNoFromInt();	// true로 초기화 됨
+		Judge judge = new Judge();
+		YesNoFromInt isGameStart = new YesNoFromInt();	// true로 초기화 됨
 		
-		while (isStartingGame.isTrue()) {
-			Judge judge = new Judge();			// 생성시 마다 랜덤 숫자 생성
+		while (isGameStart.isTrue()) {
+			judge.createRandNumbers();
 			playOneSet(user, judge);
-			isStartingGame.askMoreGame();
+			isGameStart.askMoreGame();
 		}
 	}
 	

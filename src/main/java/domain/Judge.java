@@ -15,16 +15,14 @@ public class Judge {
 	private static Random RANDOM = new Random();
 	private GameNumbers judgeNumbers;
 	
-	public Judge() {
-		this.judgeNumbers = createRandNumbers();
-	}
+	public Judge() {}
 	
-	private GameNumbers createRandNumbers() {
+	public void createRandNumbers() {
 		List<Integer> randNums = new ArrayList<Integer>();
 		while(randNums.size() < NUM_OF_NUMBERS) {
 			addIfUnique(randNums, RANDOM.nextInt(NUM_RANGE) + MIN_NUM);
 		}
-		return new GameNumbers(randNums);
+		this.judgeNumbers = new GameNumbers(randNums);
 	}
 
 	private void addIfUnique(List<Integer> numbers, int input) {
