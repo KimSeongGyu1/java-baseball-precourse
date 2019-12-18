@@ -12,5 +12,7 @@ public class Main {
 		me.showInput();
 		System.out.println("-");
 		judge.showNumbers();
+		judge.checkResult(me.getNumbers());
+		judge.showResult();
 	}
 }

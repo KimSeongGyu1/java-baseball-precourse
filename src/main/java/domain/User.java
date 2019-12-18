@@ -16,6 +16,10 @@ public class User {
 		}
 	}
 	
+	public GameNumbers getNumbers() {
+		return this.userNumbers;
+	}
+	
 	public void showInput() {
 		for (int i = 0; i < this.userNumbers.getNumbers().size(); i++) {
 			System.out.println(userNumbers.getNumbers().get(i));

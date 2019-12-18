@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class GameNumbers {
 	private static final int NUM_OF_NUMBERS = 3;
@@ -31,5 +32,17 @@ public class GameNumbers {
 	
 	public List<Integer> getNumbers() {
 		return this.gameNumbers;
+	}
+	
+	public int getExactMatchingCounts(GameNumbers input) {
+		return (int) IntStream.range(0, NUM_OF_NUMBERS)
+		.filter(i -> input.getNumbers().get(i) == this.gameNumbers.get(i))
+		.count();
+	}
+	
+	public int getOverlappingCounts(GameNumbers input) {
+		return (int) input.getNumbers().stream()
+				.filter(num -> this.gameNumbers.contains(num))
+				.count();
 	}
 }
