@@ -4,13 +4,17 @@
 
 ## 기능 목록
 
-- [1] enter numbers
-  - check if numbers are valid
-    - is size 3?
-    - is all characters are one digit numbers (0~9) ?
-  - if input number is not valid, re-enter until valid number
-- [2] generate computer's numbers
-  - check if generated numbers are valid
-    - is there any same numbers?
-- [3] decide result of the game
-- [4] decide repeat or terminate game
+> 유저
+
+- 3자리 숫자를 입력한다
+  - 3개의 한 자리 수 정수만 입력받는다
+  - 중복되지 않는 수를 입력한다
+
+> 심판
+
+- 랜덤한 3자리 수를 생성한다
+  - 중복되지 않은 수를 생성한다
+- 같은 수가 같은자리에 있으면 스트라이크
+- 같은 수가 다른자리에 있으면 볼
+- 같은 수가 전혀 없으면 포볼 또는 낫싱
+- 
