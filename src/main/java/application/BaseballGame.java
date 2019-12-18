@@ -1,17 +1,27 @@
 package application;
 
 import domain.User;
+import outputview.OutputView;
 import domain.Judge;
 
-public class BaseballGame {
+public class BaseballGame {	
 	public void play() {
 		User user = new User();
-		Judge judge = new Judge();
+		YesNoFromInt isStartingGame = new YesNoFromInt();	// true로 초기화 됨
 		
+		while(isStartingGame.isTrue()) {
+			Judge judge = new Judge();			// 생성시 마다 랜덤 숫자 생성
+			playOneSet(user, judge);
+			isStartingGame.askMoreGame();
+		}
+	}
+	
+	public void playOneSet(User user, Judge judge) {
 		while(!judge.isGameFinished()) {
 			user.enterInput();
 			judge.checkResult(user.getNumbers());
 			judge.showResult();
 		}
+		OutputView.showFinish();
 	}
 }

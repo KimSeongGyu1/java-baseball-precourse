@@ -3,7 +3,8 @@ package domain;
 import java.util.Random;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.stream.IntStream;
+
+import outputview.OutputView;
 
 public class Judge {
 	private static final int NUM_OF_NUMBERS = 3;
@@ -53,7 +54,6 @@ public class Judge {
 	}
 	
 	public void showResult() {
-		System.out.println("스트라이크: " + this.strikeCounts);
-		System.out.println("볼: " + this.ballCounts);
+		OutputView.showResult(this.strikeCounts, this.ballCounts);
 	}
 }
