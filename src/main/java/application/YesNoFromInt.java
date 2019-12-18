@@ -21,7 +21,7 @@ public class YesNoFromInt {
 			int input = InputView.enterMoreGame();
 			checkValidInt(input);
 			this.yesNo = convertIntToBool(input);
-		} catch(IllegalArgumentException e) {
+		} catch (IllegalArgumentException e) {
 			System.out.println(e.getMessage());
 			askMoreGame();
 		}

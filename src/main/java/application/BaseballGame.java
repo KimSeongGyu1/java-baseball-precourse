@@ -9,7 +9,7 @@ public class BaseballGame {
 		User user = new User();
 		YesNoFromInt isStartingGame = new YesNoFromInt();	// true로 초기화 됨
 		
-		while(isStartingGame.isTrue()) {
+		while (isStartingGame.isTrue()) {
 			Judge judge = new Judge();			// 생성시 마다 랜덤 숫자 생성
 			playOneSet(user, judge);
 			isStartingGame.askMoreGame();
@@ -17,10 +17,10 @@ public class BaseballGame {
 	}
 	
 	public void playOneSet(User user, Judge judge) {
-		while(!judge.isGameFinished()) {
+		boolean isFinished = false;
+		while (!isFinished) {
 			user.enterInput();
-			judge.checkResult(user.getNumbers());
-			judge.showResult();
+			isFinished = judge.checkFinished(user.getNumbers());
 		}
 		OutputView.showFinish();
 	}

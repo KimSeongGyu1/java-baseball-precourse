@@ -14,8 +14,6 @@ public class Judge {
 	
 	private static Random RANDOM = new Random();
 	private GameNumbers judgeNumbers;
-	private int strikeCounts = 0;
-	private int ballCounts = 0;
 	
 	public Judge() {
 		this.judgeNumbers = createRandNumbers();
@@ -35,25 +33,14 @@ public class Judge {
 		}
 	}
 	
-	public void checkResult(GameNumbers userNumbers) {
-		this.strikeCounts = this.judgeNumbers.getExactMatchingCounts(userNumbers);
-		this.ballCounts = this.judgeNumbers.getOverlappingCounts(userNumbers) - this.strikeCounts;
-	}
-	
-	public boolean isGameFinished() {
-		if (this.strikeCounts == FINISHING_COUNTS) {
+	public boolean checkFinished(GameNumbers userNumbers) {
+		int strikeCounts = this.judgeNumbers.getExactMatchingCounts(userNumbers);
+		int ballCounts = this.judgeNumbers.getOverlappingCounts(userNumbers) - strikeCounts;
+		OutputView.showResult(strikeCounts, ballCounts);
+		
+		if (strikeCounts == FINISHING_COUNTS) {
 			return true;
 		}
 		return false;
-	}
-	
-	public void showNumbers() {
-		for (int i = 0; i < this.judgeNumbers.getNumbers().size(); i++) {
-			System.out.println(judgeNumbers.getNumbers().get(i));
-		}
-	}
-	
-	public void showResult() {
-		OutputView.showResult(this.strikeCounts, this.ballCounts);
 	}
 }

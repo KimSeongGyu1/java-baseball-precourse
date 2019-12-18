@@ -36,8 +36,8 @@ public class GameNumbers {
 	
 	public int getExactMatchingCounts(GameNumbers input) {
 		return (int) IntStream.range(0, NUM_OF_NUMBERS)
-		.filter(i -> input.getNumbers().get(i) == this.gameNumbers.get(i))
-		.count();
+				.filter(i -> input.getNumbers().get(i) == this.gameNumbers.get(i))
+				.count();
 	}
 	
 	public int getOverlappingCounts(GameNumbers input) {
