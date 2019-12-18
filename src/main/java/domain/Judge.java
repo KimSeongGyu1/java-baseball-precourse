@@ -18,14 +18,12 @@ public class Judge {
 	
 	private GameNumbers createRandNumbers() {
 		List<Integer> randNums = new ArrayList<Integer>();
-		int count = 0;
-		while(count < NUM_OF_NUMBERS) {
+		while(randNums.size() < NUM_OF_NUMBERS) {
 			addIfUnique(randNums, RANDOM.nextInt(NUM_RANGE) + MIN_NUM);
-			count++;
 		}
 		return new GameNumbers(randNums);
 	}
-	
+
 	private void addIfUnique(List<Integer> numbers, int input) {
 		if (!numbers.contains(input)) {
 			numbers.add(input);
