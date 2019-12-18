@@ -1,8 +1,8 @@
-number baseball game
+숫자야구게임
 
 ---
 
-## Required Implementation list
+## 기능 목록
 
 - [1] enter numbers
   - check if numbers are valid
