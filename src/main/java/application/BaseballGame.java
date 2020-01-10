@@ -9,7 +9,7 @@ public class BaseballGame {
 		User user = new User();
 		Judge judge = new Judge();
 		YesNoFromInt isGameStart = new YesNoFromInt();	// true로 초기화 됨
-		
+
 		while (isGameStart.isTrue()) {
 			judge.createRandNumbers();
 			playOneSet(user, judge);
